@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import IMAGES from "../images/Images";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./styles/home.css";
 const Home = () => {
@@ -13,14 +13,13 @@ const Home = () => {
   const [lcondition, setLConditions] = useState(false);
   const [rcondition, setRConditions] = useState(false);
   // computer message display
-  useEffect(() => {
-    setCont(true);
-    setTimeout(() => {
-      setCont(false);
-    }, 2300);
-  }, []);
+
   // starting game function
   const startgame = () => {
+      setCont(true);
+      setTimeout(() => {
+        setCont(false);
+      }, 2000);
     setStart(true);
     setCompchoice(Math.floor(Math.random() * 100 + 1));
   };
